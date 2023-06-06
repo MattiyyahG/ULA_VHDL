@@ -4,14 +4,14 @@ use ieee.std_logic_1164.all;
 
 --- desloca 1 bit de a para a direita se B(0)=1 e para esquerda se B(0)=0--
 
--- criado para que, na hora da apresentação, caso alguma função desse errado, tivéssemos um plano B
+--criado para que, na hora da apresentação, caso alguma função desse errado, tivéssemos um plano B
 
 entity reserva is 
 
 	port( a,b : IN std_logic_vector (3 downto 0); --- recebe a, b 
 
 	    saidaR : OUT std_logic_vector (3 downto 0)-- devolve o resultado
-
+        
 	);
 
 end reserva;
