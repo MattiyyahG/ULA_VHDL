@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 
 entity main is -- Só juntando o modulo da ula ao contador e ao display LCD
 
-	port( eop : IN std_logic_vector (2 downto 0);
+	port(eop : IN std_logic_vector (2 downto 0);
 
 			CLOCK: std_logic;
 
@@ -14,7 +14,7 @@ entity main is -- Só juntando o modulo da ula ao contador e ao display LCD
 
 			fneg, fcout, fnulo, fovrf: OUT std_logic
 
-			);
+		);
 
 end main;
 
@@ -24,7 +24,7 @@ architecture dados of main is
 
 	signal AB : std_logic_vector(7 downto 0);
 
-	signal F ,G , H, I: std_logic;
+	signal F, G, H, I: std_logic;
 	
 COMPONENT ULA is 
 
@@ -38,7 +38,7 @@ COMPONENT ULA is
 
 		res: OUT std_logic_vector (3 downto 0);-- vetor de saida
 
-        cout,nulo,neg,ovrf: OUT std_logic --- flags
+        cout, nulo, neg, ovrf: OUT std_logic --- flags
 
 		); 
 

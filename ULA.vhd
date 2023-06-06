@@ -24,13 +24,13 @@ end ULA;
 
 architecture dados of ULA is
 
-signal s,res_soma,res_soma3,res_subt,res_subt1, res_prio, res_quant, res_des, res_reser, res_comp: std_logic_vector(3 downto 0);
+signal s, res_soma, res_soma3, res_subt, res_subt1, res_prio, res_quant, res_des, res_reser, res_comp: std_logic_vector(3 downto 0);
 
-constant zero,zero3 : std_logic := '0';
+constant zero, zero3 : std_logic := '0';
 
-signal carryout1, carryout2,carryout3,carryout4, overflow1, overflow2, overflow3, overflow4 : std_logic;
+signal carryout1, carryout2, carryout3, carryout4, overflow1, overflow2, overflow3, overflow4 : std_logic;
 
-signal x1, x2, x3, x4,x5,x6,x7,x8, aux: std_logic; -- variaveis intermediarias
+signal x1, x2, x3, x4, x5, x6, x7, x8, aux: std_logic; -- variaveis intermediarias
 
 
 COMPONENT subtrator4 is 
@@ -57,7 +57,7 @@ carry_in: IN std_logic;
 
 soma: OUT std_logic_vector (3 downto 0);
 
-carry_out,overflow: OUT std_logic
+carry_out, overflow: OUT std_logic
 
 );
 
@@ -89,7 +89,7 @@ END COMPONENT deslocador;
 
 COMPONENT reserva is 
 
-    port( a,b : IN std_logic_vector (3 downto 0);
+    port(a, b : IN std_logic_vector (3 downto 0);
 
 		saidaR : OUT std_logic_vector (3 downto 0)
 
@@ -99,11 +99,11 @@ END COMPONENT reserva;
 
 COMPONENT comparar is 
 
-	port( a,b : IN std_logic_vector (3 downto 0);
+	port(a, b : IN std_logic_vector (3 downto 0);
 
-			saidaR : OUT std_logic_vector (3 downto 0)
+		saidaR : OUT std_logic_vector (3 downto 0)
 
-			);
+		);
 
 END COMPONENT comparar;
 

@@ -8,10 +8,10 @@ use ieee.std_logic_1164.all;
 
 entity reserva is 
 
-	port( a,b : IN std_logic_vector (3 downto 0); --- recebe a, b 
+	port(a, b : IN std_logic_vector (3 downto 0); --- recebe a, b 
 
 	    saidaR : OUT std_logic_vector (3 downto 0)-- devolve o resultado
-        
+
 	);
 
 end reserva;
