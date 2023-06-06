@@ -28,5 +28,4 @@ architecture dados of reserva is
 
 		saidaR(3)<=((a(0) and b(0)) or(a(2) and not(b(0))));
 		
-		
 end dados;

@@ -6,7 +6,7 @@ use ieee.std_logic_1164.all;
 
 entity somador is 
 
-	port( a,b,carry_in : IN std_logic; --- recebe a, b e carry in
+	port(a, b, carry_in : IN std_logic; --- recebe a, b e carry in
 
 			carry_out, soma : OUT std_logic -- devolve carry out e o resultado
 
@@ -33,5 +33,5 @@ architecture dados of somador is
 		y1 <= a xor b;
 
 		soma <= y1 xor carry_in;
-		
+
 end dados;

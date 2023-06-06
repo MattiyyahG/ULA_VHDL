@@ -14,7 +14,7 @@ entity main is -- Só juntando o modulo da ula ao contador e ao display LCD
 
 			fneg, fcout, fnulo, fovrf: OUT std_logic
 
-			 );
+			);
 
 end main;
 
@@ -51,7 +51,7 @@ COMPONENT counter_seconds is
     counter_out: out std_logic_vector(7 downto 0)
 
     );
-	
+
 END COMPONENT counter_seconds;
 	
 begin

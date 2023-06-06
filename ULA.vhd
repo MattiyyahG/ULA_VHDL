@@ -71,7 +71,7 @@ PORT(
 
 			prio, quantidade: OUT std_logic_vector (3 downto 0)
 
-				);
+);
 
 END COMPONENT prioridade;
 
@@ -125,41 +125,37 @@ END COMPONENT comparar;
 	
 	compar: comparar port map(a, b, res_comp);
     
-    
     ---- logica de enable, para ativar o que a gente quer que seja feito--
 
-	x1<= (enable) and ((not (op(2))) and (not (op (1))) and (not (op (0)))); -- para subtração(a-b)  000
+	x1 <= (enable) and ((not (op(2))) and (not (op (1))) and (not (op (0)))); -- para subtração(a-b)  000
 
-	x2<= (enable) and ((not (op(2))) and (not (op (1))) and ( (op (0)))); --- para soma   001
+	x2 <= (enable) and ((not (op(2))) and (not (op (1))) and ( (op (0)))); --- para soma   001
 
-	x3<=(enable) and ((not (op(2))) and ( (op (1))) and (not (op (0)))); -- para incremento de um de a 010
+	x3 <=(enable) and ((not (op(2))) and ( (op (1))) and (not (op (0)))); -- para incremento de um de a 010
 
-	x4<= (enable) and ((not (op(2))) and ( (op (1))) and ( (op (0)))); --- para complemento de 2 de a 011
+	x4 <= (enable) and ((not (op(2))) and ( (op (1))) and ( (op (0)))); --- para complemento de 2 de a 011
 
-	x5<= (enable) and (( (op(2))) and (not (op (1))) and (not (op (0)))); ---para or  bit a bit  a e b 100
+	x5 <= (enable) and (( (op(2))) and (not (op (1))) and (not (op (0)))); --- para or  bit a bit  a e b 100
 
-	x6<= (enable) and (( (op(2))) and ( not (op (1))) and ( (op (0)))); --- prioridade 101
+	x6 <= (enable) and (( (op(2))) and ( not (op (1))) and ( (op (0)))); --- prioridade 101
 
-	x7<= (enable) and (((op(2))) and ( (op (1))) and ( not (op (0)))); -- comparador 110
+	x7 <= (enable) and (((op(2))) and ( (op (1))) and ( not (op (0)))); -- comparador 110
 
-	x8<=  (enable) and (( (op(2))) and ( (op (1))) and ((op (0)))); -- para AND bit a bit  a e b 111
+	x8 <=  (enable) and (( (op(2))) and ( (op (1))) and ((op (0)))); --- para AND bit a bit  a e b 111
 	
 	--- agora fazemos a lógica para o resultado
 
-	s (3)<=(x1 and res_subt(3)) or (x2 and res_soma(3)) or (x3 and res_soma3(3)) or (x4 and res_subt1(3)) or (x5 and (a(3) or b(3))) or (x6 and res_prio(3)) or (x7 and res_comp(3)) or   (x8 and (a(3) and b(3)))  ;
+	s (3) <= (x1 and res_subt(3)) or (x2 and res_soma(3)) or (x3 and res_soma3(3)) or (x4 and res_subt1(3)) or (x5 and (a(3) or b(3))) or (x6 and res_prio(3)) or (x7 and res_comp(3)) or   (x8 and (a(3) and b(3)))  ;
 	
-	s (2)<=(x1 and res_subt(2)) or (x2 and res_soma(2)) or (x3 and res_soma3(2)) or (x4 and res_subt1(2)) or (x5 and (a(2) or b(2))) or (x6 and res_prio(2)) or (x7 and res_comp(2)) or   (x8 and (a(2) and b(2)))  ;
+	s (2) <= (x1 and res_subt(2)) or (x2 and res_soma(2)) or (x3 and res_soma3(2)) or (x4 and res_subt1(2)) or (x5 and (a(2) or b(2))) or (x6 and res_prio(2)) or (x7 and res_comp(2)) or   (x8 and (a(2) and b(2)))  ;
 	
-	s (1)<=(x1 and res_subt(1)) or (x2 and res_soma(1)) or (x3 and res_soma3(1)) or (x4 and res_subt1(1)) or (x5 and (a(1) or b(1))) or (x6 and res_prio(1)) or (x7 and res_comp(1)) or   (x8 and (a(1) and b(1)))  ;
+	s (1) <= (x1 and res_subt(1)) or (x2 and res_soma(1)) or (x3 and res_soma3(1)) or (x4 and res_subt1(1)) or (x5 and (a(1) or b(1))) or (x6 and res_prio(1)) or (x7 and res_comp(1)) or   (x8 and (a(1) and b(1)))  ;
 	
-	s (0)<=(x1 and res_subt(0)) or (x2 and res_soma(0)) or (x3 and res_soma3(0)) or (x4 and res_subt1(0)) or (x5 and (a(0) or b(0))) or (x6 and res_prio(0)) or (x7 and res_comp(0)) or   (x8 and (a(0) and b(0)))  ;
+	s (0) <= (x1 and res_subt(0)) or (x2 and res_soma(0)) or (x3 and res_soma3(0)) or (x4 and res_subt1(0)) or (x5 and (a(0) or b(0))) or (x6 and res_prio(0)) or (x7 and res_comp(0)) or   (x8 and (a(0) and b(0)))  ;
 	
-	res<=s;
+	res <= s;
 	
-	
-	
-	
-   	neg<=((s(3) and x1) or (x4 and s(3)));
+   	neg <= ((s(3) and x1) or (x4 and s(3)));
 	
 	cout <= (x1 and carryout1) or (x2 and carryout2) or (x3 and carryout3) or (x4 and carryout4);
 	
@@ -169,6 +165,4 @@ END COMPONENT comparar;
 	
 	ovrf <= aux;
 	
-
-
 end dados;

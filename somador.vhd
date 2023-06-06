@@ -12,7 +12,7 @@ entity somador4 is
 
 		soma: OUT std_logic_vector (3 downto 0); --- resultado
 
-		carry_out,overflow: OUT std_logic --- flags do resultado 
+		carry_out, overflow: OUT std_logic --- flags do resultado 
 		
             );
 
@@ -20,9 +20,9 @@ end somador4;
 
 architecture dados of somador4 is
 
-signal cout,s,soma1,soma2 : std_logic_vector(3 downto 0);
+signal cout, s, soma1, soma2 : std_logic_vector(3 downto 0);
 
-signal x1, x2, x3, x4,x5,x6,x7,x8 : std_logic;
+signal x1, x2, x3, x4, x5, x6, x7, x8 : std_logic;
 
 
 COMPONENT somador IS --- somador para cada bit
@@ -70,6 +70,5 @@ END COMPONENT somador;
     carry_out <= ( x1 and cout(2)); --- so há carryout se os sinais forem iguais
 
     overflow <= (cout(2) and x4) or (x3 and (not(cout(2)))); --- para o overflow, vai depender se os sinais são iguais e se estamos somando números negativos ou positivos
-   
    
 end dados;
