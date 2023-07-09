@@ -107,6 +107,25 @@ COMPONENT comparar is
 
 END COMPONENT comparar;
 
+COMPONENT or is
+
+	port(a, b : IN std_logic_vector (3 downto 0);
+
+		F : OUT std_logic_vector (3 downto 0)
+		Cout : OUT std_logic_vector (3 downto 0)
+
+		);
+
+COMPONENT and is
+
+	port(a, b : IN std_logic_vector (3 downto 0);
+
+		F : OUT std_logic_vector (3 downto 0)
+
+		Cout : OUT std_logic_vector (3 downto 0)
+
+		);
+
 	begin
 
 	add: somador4 port map (a, b, zero, res_soma, carryout2, overflow2);
@@ -124,6 +143,10 @@ END COMPONENT comparar;
 	reser:reserva port map(a, b, res_reser); 
 	
 	compar: comparar port map(a, b, res_comp);
+
+	and0: and port map(a, b, F, Cout);
+
+	or0: or port map(a, b, F, Cout);
     
     ---- logica de enable, para ativar o que a gente quer que seja feito--
 
