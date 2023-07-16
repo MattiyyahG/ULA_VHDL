@@ -2,7 +2,7 @@ library ieee;
 
 use ieee.std_logic_1164.all;
 
-entity main is -- Só juntando o modulo da ula ao contador e ao display LCD
+entity main is
 
 	port(eop : IN std_logic_vector (2 downto 0);
 

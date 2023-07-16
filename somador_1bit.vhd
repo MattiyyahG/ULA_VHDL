@@ -2,13 +2,13 @@ library ieee;
 
 use ieee.std_logic_1164.all;
 
---- somador simples de 1 bit para usarmos no somador de 4 bits--
+--- somador simples de 1 bit
 
 entity somador is 
 
-	port(a, b, carry_in : IN std_logic; --- recebe a, b e carry in
+	port(a, b, carry_in : IN std_logic;
 
-			carry_out, soma : OUT std_logic -- devolve carry out e o resultado
+			carry_out, soma : OUT std_logic
 
 	);
 
@@ -16,7 +16,7 @@ end somador;
 
 architecture dados of somador is
 
-	signal x1, x2, x3, x4, y1 : std_logic; -- variaveis intermediarias
+	signal x1, x2, x3, x4, y1 : std_logic;
 	
 	begin
 

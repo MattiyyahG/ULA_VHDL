@@ -2,7 +2,6 @@ library ieee;
 
 use ieee.std_logic_1164.all;
 
--- definição das variaveis de entrada, saida, enable e flag
 
 entity ULA is 
 
@@ -30,7 +29,7 @@ constant zero, zero3 : std_logic := '0';
 
 signal carryout1, carryout2, carryout3, carryout4, overflow1, overflow2, overflow3, overflow4 : std_logic;
 
-signal x1, x2, x3, x4, x5, x6, x7, x8, aux: std_logic; -- variaveis intermediarias
+signal x1, x2, x3, x4, x5, x6, x7, x8, aux: std_logic; 
 
 
 COMPONENT subtrator4 is 

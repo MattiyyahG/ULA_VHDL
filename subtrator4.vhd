@@ -22,7 +22,7 @@ architecture dados of subtrator4 is
 
 signal psub, x, y : std_logic_vector(3 downto 0) := "0000";
 
-constant cc : std_logic :='1';-----  carry in = 1 para o complemento de 2
+constant cc : std_logic :='1';
 
 signal cout, ovrf : std_logic;
 
@@ -46,9 +46,9 @@ END COMPONENT somador4;
 
 begin
  
-s <= NOT nb; -- recebe b barrado para o complemento de 2
+s <= NOT nb;
 
-add : somador4 port map (na, s, cc, subt, carry_out, overflow); -- faz a soma em complemento de dois entre a e b barrado
+add : somador4 port map (na, s, cc, subt, carry_out, overflow);
 	 
 
 end dados;
